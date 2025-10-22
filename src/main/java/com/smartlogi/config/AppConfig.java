@@ -24,11 +24,11 @@ public class AppConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        // === MODIFIEZ CES LIGNES ===
+
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/smartlogi_db"); // Nom de votre BDD
-        dataSource.setUsername("postgres"); // Votre utilisateur PG
-        dataSource.setPassword("admin");    // Votre mot de passe PG
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/smartlogi_db");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("admin");
         // ==========================
         return dataSource;
     }
@@ -61,12 +61,7 @@ public class AppConfig {
         properties.setProperty("hibernate.show_sql", "true");
         // Formatage du SQL affiché
         properties.setProperty("hibernate.format_sql", "true");
-        // "hibernate.hbm2ddl.auto" :
-        //    "create" : supprime et recrée les tables à chaque démarrage
-        //    "update" : tente de mettre à jour les tables si les entités changent
-        //    "validate" : valide juste que le schéma correspond
-        //    "none" : ne fait rien
-        // Utilisez "create" ou "update" pour le développement
+
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         return properties;
