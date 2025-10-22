@@ -1,4 +1,4 @@
-package com.smartlogi.entity;
+package com.smartlogi.enums;
 
 public enum StatutColis {
     PREPARATION,

@@ -1,5 +1,7 @@
 package com.smartlogi.entity;
 
+import com.smartlogi.enums.StatutColis;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
