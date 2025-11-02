@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "livreurs") // Nom de la table en BDD
@@ -22,6 +23,7 @@ public class Livreur implements Serializable {
     // mappedBy = "livreur" : Dit à JPA que c'est le champ "livreur"
     // dans la classe "Colis" qui gère la clé étrangère.
     // Le Livreur n'a pas de colonne "colis_id".
+    @JsonIgnore
     @OneToMany(
             mappedBy = "livreur",
             cascade = CascadeType.ALL, // Si on supprime un livreur, ses colis sont supprimés

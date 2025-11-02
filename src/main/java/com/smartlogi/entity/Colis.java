@@ -4,6 +4,7 @@ import com.smartlogi.enums.StatutColis;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "colis")
@@ -22,6 +23,7 @@ public class Colis implements Serializable {
 
     // --- Relation Many-to-One ---
     // C'est l'entité "propriétaire".
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "livreur_id", nullable = false) // Crée la colonne "livreur_id" dans la table "colis"
     private Livreur livreur;
